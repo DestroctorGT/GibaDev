@@ -14,14 +14,15 @@ export default function Nav() {
         })}
       >
         <li>
-          <h2
+          <a
+            href="#home"
             className={css({
               textTransform: "capitalize",
               fontWeight: "extrabold",
             })}
           >
             giba dev
-          </h2>
+          </a>
         </li>
 
         <li className={css({ display: { base: "none", lg: "block" } })}>
