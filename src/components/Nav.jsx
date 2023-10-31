@@ -11,6 +11,7 @@ export default function Nav() {
           alignItems: "center",
           justifyContent: "space-between",
           backgroundColor: "#D4F2FC",
+          boxShadow: "0px 10px 10px -3px rgba(0,0,0,0.1)",
         })}
       >
         <li>
