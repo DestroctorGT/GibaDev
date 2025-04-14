@@ -47,7 +47,7 @@ export default function ProjectCard({
 
       <img
         src={pImage}
-        alt="project image"
+        alt={pTitle}
         className={css({
           width: "100%",
           height: "auto",
@@ -90,7 +90,7 @@ export default function ProjectCard({
             tech stack
           </p>
 
-          {pTechStack &&
+          {pTechStack ?
             pTechStack.map((tech, index) => {
               return (
                 <img
@@ -104,10 +104,10 @@ export default function ProjectCard({
                   })}
                 />
               );
-            })}
+            }) : null}
         </div>
 
-        {pSocialLinks &&
+        {pSocialLinks ?
           pSocialLinks.map(({ github, web }, index) => {
             return (
               <div
@@ -137,7 +137,7 @@ export default function ProjectCard({
                 )}
               </div>
             );
-          })}
+          }) : null}
       </article>
     </div>
   );

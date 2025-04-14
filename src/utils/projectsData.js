@@ -1,28 +1,29 @@
-import vitaNovaImage from "../assets/VitaNovaImage.png";
 import sportWearImage from "../assets/sportwear.png";
 import pokemonPI from "../assets/pokemonPI.png";
+import vidlanceImage from "../assets/vidlance.png";
 import reactLogo from "../assets/react.svg";
-import pandaCssLogo from "../assets/pandacss.svg";
-import gunjsLogo from "../assets/gunjs.svg";
 import gitHubLogo from "../assets/github.svg";
 import reduxLogo from "../assets/redux.svg";
 import tailwindLogo from "../assets/tailwindcss.svg";
 import linkedIn from "../assets/linkedin.svg";
 import calendly from "../assets/calendly.svg";
+import nextjsLogo from "../assets/nextjs-icon.svg";
+import nestjsLogo from "../assets/nestjs.png";
 
 export const projectsData = [
   {
-    title: "Vita Nova",
-    image: vitaNovaImage,
+    title: "Vidlance",
+    image: vidlanceImage,
     description:
-      "La primera red social colombiana descentralizada de código abierto donde puedes ser tú mismo libremente.",
-    techStack: [reactLogo, pandaCssLogo, gunjsLogo],
+      "Plataforma dedicada a conectar editores de vídeo con clientes que buscan servicios de edición.",
+    techStack: [nextjsLogo, tailwindLogo, nestjsLogo],
     socialLinks: [
       {
         github: {
-          link: "https://github.com/DestroctorGT/Vita-Nova",
+          link: "https://github.com/DestroctorGT/vidlance",
           image: gitHubLogo,
         },
+        web: { link: "https://vidlance.vercel.app/" },
       },
     ],
   },

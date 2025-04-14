@@ -1,18 +1,90 @@
 import { flex } from "../styled-system/patterns";
 import { css } from "../styled-system/css";
-import Nav from "./components/Nav";
 import ProjectCard from "./components/ProjectCard";
 import fotoPerfil from "./assets/fotoperfil.jpg";
 import gitHub from "./assets/github.svg";
 import linkedIn from "./assets/linkedin.svg";
 import calendly from "./assets/calendly.svg";
 import { projectsData, socialMediaLinks } from "./utils/projectsData";
-import { IconFileCv } from "@tabler/icons-react";
+import { IconFileCv, IconMenu2 } from "@tabler/icons-react";
 
 function App() {
   return (
     <>
-      <Nav></Nav>
+      <nav>
+        <ul
+          className={css({
+            padding: "1rem",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+            backgroundColor: "#D4F2FC",
+            boxShadow: "0px 10px 10px -3px rgba(0,0,0,0.1)",
+          })}
+        >
+          <li>
+            <a
+              href="#home"
+              className={css({
+                textTransform: "capitalize",
+                fontWeight: "extrabold",
+              })}
+            >
+              giba dev
+            </a>
+          </li>
+
+          <li className={css({ display: { base: "none", lg: "block" } })}>
+            <ul
+              className={css({
+                display: "flex",
+                alignItems: "center",
+                gap: "20px",
+              })}
+            >
+              <li>
+                <a
+                  className={css({
+                    textTransform: "capitalize",
+                    fontWeight: "400",
+                  })}
+                  href="#inicio"
+                >
+                  inicio
+                </a>
+              </li>
+              <li>
+                <a
+                  className={css({
+                    textTransform: "capitalize",
+                    fontWeight: "400",
+                  })}
+                  href="#proyectos"
+                >
+                  proyectos
+                </a>
+              </li>
+              <li>
+                <a
+                  className={css({
+                    textTransform: "capitalize",
+                    fontWeight: "400",
+                  })}
+                  href="#contacto"
+                >
+                  contacto
+                </a>
+              </li>
+            </ul>
+          </li>
+
+          <li className={css({ display: { base: "block", lg: "none" } })}>
+            <a aria-label="menu" href="#menu">
+              <IconMenu2 />
+            </a>
+          </li>
+        </ul>
+      </nav>
 
       <main
         className={flex({
@@ -34,7 +106,7 @@ function App() {
         >
           <img
             src={fotoPerfil}
-            alt="gino tapia barrios profile photo"
+            alt="gino tapia barrios"
             className={css({
               width: "100%",
               height: "auto",
@@ -141,12 +213,12 @@ function App() {
               wrap: { lg: "wrap" },
             })}
           >
-            {projectsData &&
+            {projectsData ?
               projectsData.map(
-                ({ title, image, description, techStack, socialLinks }, id) => {
+                ({ title, image, description, techStack, socialLinks }) => {
                   return (
                     <ProjectCard
-                      key={id}
+                      key={title}
                       pTitle={title}
                       pImage={image}
                       pDescription={description}
@@ -155,7 +227,7 @@ function App() {
                     />
                   );
                 }
-              )}
+              ): null}
           </article>
         </section>
       </main>
@@ -185,7 +257,7 @@ function App() {
             gap: { base: "20px", lg: "32px" },
           })}
         >
-          {socialMediaLinks &&
+          {socialMediaLinks ?
             socialMediaLinks.map((social, index) => {
               return (
                 <li key={index}>
@@ -218,7 +290,7 @@ function App() {
                   )}
                 </li>
               );
-            })}
+            }) : null}
         </ul>
       </footer>
     </>
